@@ -1,6 +1,7 @@
 from flask import Flask, render_template 
 import raspieats
 from raspieats import Game
+import catchem
 
 
 app = Flask(__name__)
@@ -16,6 +17,10 @@ def index():
 def game():
     my_game = Game()
     my_game.run()
+
+@app.route('/game2')
+def game2():
+    return "Game2 ran"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
