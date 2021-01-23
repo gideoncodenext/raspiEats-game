@@ -11,7 +11,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-
+@app.route('/catchem')
+def catchemOne():
+    print("catchemOne")
+    return render_template('catchem.html')
+    
 
 @app.route('/game')
 def game():
